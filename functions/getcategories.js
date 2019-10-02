@@ -5,8 +5,9 @@ const API_ENDPOINT = "https://sls-wus-dev-multicloud-product-demo-bjk.azurewebsi
 exports.handler = async (event, context) => {
   return fetch(API_ENDPOINT, { headers: { "Accept": "application/json" } })
     .then(function(response) { 
-        console.log(response.json());
-        return response.json()
+        const myjs = response.json() 
+        console.log(myjs);
+        return myjs;
     }
     )
     .then(data => ({
