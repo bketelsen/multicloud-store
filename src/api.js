@@ -3,7 +3,7 @@ async function getCategories() {
     fetch('/.netlify/functions/getcategories')
     .then(function(resp) {
         console.log(resp);
-        resp.json()
+        return resp.json();
     })
     .then(function(data) {
       let categories = data.values;
