@@ -19,9 +19,9 @@
 {#await categories}
 	<!-- promise is pending -->
 	<p>waiting for the promise to resolve...</p>
-{:then value}
+{:then categories}
 	<!-- promise was fulfilled -->
-	<p>The value is {value}</p>
+	<p>The value is {categories}</p>
 {:catch error}
 	<!-- promise was rejected -->
 	<p>Something went wrong: {error.message}</p>
