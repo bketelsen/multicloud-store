@@ -1,5 +1,4 @@
 
-
 async function getCategories() {
     fetch('/.netlify/functions/getcategories')
     .then((resp) => resp.json())
