@@ -16,13 +16,7 @@
 </style>
 
 <h1>Hello {name}!</h1>
-{#await categories}
+{#each categories as cat}
 	<!-- promise is pending -->
-	<p>waiting for the promise to resolve...</p>
-{:then categories}
-	<!-- promise was fulfilled -->
-	<p>The value is {categories}</p>
-{:catch error}
-	<!-- promise was rejected -->
-	<p>Something went wrong: {error.message}</p>
-{/await}
+	<p>Something went wrong: {cat}</p>
+{/each}
