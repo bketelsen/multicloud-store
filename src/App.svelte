@@ -5,7 +5,7 @@
 	//import categories from "./categorystore.js";
 
 	
-	let promise = getCategories();
+	const promise = getCategories();
 
 
 
