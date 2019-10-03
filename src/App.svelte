@@ -5,7 +5,7 @@
 	//import categories from "./categorystore.js";
 
 	
-
+	let promise = getCategories();
 
 
 
@@ -18,6 +18,10 @@
 </style>
 
 <h1>Hello {name}!</h1>
-{#await getCategories() then cats}
-	<p> {cats}</p>
+{#await promise}
+	<!-- promise is pending -->
+	<p>waiting for the promise to resolve...</p>
+{:then value}
+	<!-- promise was fulfilled -->
+	<p>The value is {value}</p>
 {/await}
