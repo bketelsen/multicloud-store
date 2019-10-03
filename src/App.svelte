@@ -6,9 +6,9 @@
 
 	export let cats;
 
-	 onMount(() => {
-		 cats = getCategories();
-	});
+
+ $: cats = getCategories();
+
 
 </script>
 

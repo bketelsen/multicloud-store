@@ -6,7 +6,6 @@ async function getCategories() {
         return resp.json();
     })
     .then(function(data) {
-        console.log(data);
         const categories = data.data.values;
       return categories;
     })
