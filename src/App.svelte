@@ -6,6 +6,7 @@
 
 	onMount(() => {
 		categories.set( getCategories());
+		console.log($categories);
 	});
 </script>
 
