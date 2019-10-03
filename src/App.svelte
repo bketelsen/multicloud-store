@@ -3,11 +3,15 @@
 	import { onMount } from 'svelte';
 	import getCategories from "./api.js";
 	import categories from "./categorystore.js";
+	categories.subscribe(value => {
+		console.log(value);
+	});
 
 	 onMount(() => {
 		 getCategories().then(data => categories.set(data));
 		console.log($categories);
 	});
+
 </script>
 
 <style>
