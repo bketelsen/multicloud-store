@@ -4,8 +4,8 @@
 	import getCategories from "./api.js";
 	import categories from "./categorystore.js";
 
-	onMount(() => {
-		categories.set( getCategories());
+	 onMount(() => {
+		 getCategories().then(data => categories.set(data));
 		console.log($categories);
 	});
 </script>
