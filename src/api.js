@@ -1,4 +1,4 @@
-
+import categories from "./categorystore.js";
 async function getCategories() {
     fetch('/.netlify/functions/getcategories')
     .then(function(resp) {
@@ -6,7 +6,7 @@ async function getCategories() {
         return resp.json();
     })
     .then(function(data) {
-      let categories = data.values;
+        const categories = data.values;
       return categories;
     })
 }

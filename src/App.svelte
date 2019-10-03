@@ -2,14 +2,12 @@
 	export let name;
 	import { onMount } from 'svelte';
 	import getCategories from "./api.js";
-	import categories from "./categorystore.js";
-	categories.subscribe(value => {
-		console.log(value);
-	});
+	//import categories from "./categorystore.js";
+
+	export let cats;
 
 	 onMount(() => {
-		 getCategories().then(data => categories.set(data));
-		console.log($categories);
+		 cats = getCategories();
 	});
 
 </script>
@@ -21,6 +19,6 @@
 </style>
 
 <h1>Hello {name}!</h1>
-{#each $categories as cat}
-	<p>Something went wrong: {cat}</p>
-{/each}
+{#await cats then cat}
+	<p> {cat}</p>
+{/await}
