@@ -1,12 +1,12 @@
 <script>
-	export let name;
 	import { onMount } from 'svelte';
-	import getCategories from "./api.js";
-	//import categories from "./categorystore.js";
 
-	
-	const promise = getCategories();
+	let products;
 
+
+  onMount(async function() {
+	products = await fetch(`http://bketelsen-eval-prod.apigee.net/multicloud/products/`).then(r => r.json());
+  })
 
 
 </script>
@@ -17,11 +17,9 @@
 	}
 </style>
 
-<h1>Hello {name}!</h1>
-{#await promise}
-	<!-- promise is pending -->
-	<p>waiting for the promise to resolve...</p>
-{:then value}
-	<!-- promise was fulfilled -->
-	<p>The value is {value}</p>
-{/await}
+<h1>Product List</h1>
+{#if products}
+	{#each products.values as item}
+		<li>{item.name} - {item.description}</li>	
+	{/each}
+{/if}
