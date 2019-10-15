@@ -5,7 +5,7 @@
 
 
   onMount(async function() {
-	products = await fetch(`http://bketelsen-eval-prod.apigee.net/multicloud/products/`).then(r => r.json());
+	products = await fetch(`https://bketelsen-eval-prod.apigee.net/multicloud/products/`).then(r => r.json());
   })
 
 
